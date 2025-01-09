@@ -84,7 +84,7 @@ const InterfaceCreateTable: React.FC = () => {
   const buttonStart = () => {
     if (array.length <= 0) {
       setShowMessageText({
-        title: "No hay cartones",
+        title: "Cree cartones",
         content: "No hay cartones para iniciar",
       });
       setShowMessage(true);
@@ -100,7 +100,7 @@ const InterfaceCreateTable: React.FC = () => {
   const buttonDelete = () => {
     if (array.length <= 0) {
       setShowMessageText({
-        title: "No hay cartones",
+        title: "Sin cartones",
         content: "No hay cartones para eliminar",
       });
       setShowMessage(true);
@@ -193,7 +193,7 @@ const InterfaceCreateTable: React.FC = () => {
   };
 
   return (
-    <section className="max-w-5xl h-full flex flex-col justify-around items-center">
+    <section className="max-w-5xl h-full flex flex-col justify-between gap-3 py-2 items-center">
       <GroupButtonSetBoard
         onClickAdd={buttonAdd}
         onClickStart={buttonStart}

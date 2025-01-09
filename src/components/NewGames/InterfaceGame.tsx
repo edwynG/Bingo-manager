@@ -223,7 +223,7 @@ const InterfaceGame: React.FC = () => {
   };
 
   return (
-    <section className="max-w-5xl h-full flex flex-col justify-around items-center gap-3">
+    <section className="max-w-5xl h-full flex flex-col justify-between py-2 items-center gap-3">
       <GroupButtonManager
         numberGame={round.number}
         onClickNext={onClickNextRound}

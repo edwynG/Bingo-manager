@@ -1,6 +1,7 @@
 import React from "react";
 
 const Footer: React.FC = () => {
+  const date:Date = new Date();
   return (
     <>
       <footer className="w-full h-30 flex flex-col justify-center items-center space-y-2 gap-2 py-4">
@@ -59,7 +60,7 @@ const Footer: React.FC = () => {
           </div>
         </section>
         <p className="text-xs text-center">
-          © 2024 Edwyn Guzmán.
+          © {date.getFullYear()} Edwyn Guzmán.
           <br />
           Todos los derechos reservados.
         </p>

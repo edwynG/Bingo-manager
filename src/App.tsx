@@ -4,7 +4,7 @@ import NewGames from "./pages/NewGames";
 
 function App() {
   return (
-    <section className="w-full h-[620px] h-sm:h-calc-vh  min-h-[500px]">
+    <section className="w-full h-calc-vh md:h-screen min-h-[700px]">
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/NewGames" element={<NewGames />} />
