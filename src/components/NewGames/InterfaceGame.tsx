@@ -63,7 +63,7 @@ const InterfaceGame: React.FC = () => {
     stateGame.restoreGame().then(() => {
       const cartons: Carton[] = stateGame.getCartons();
       const lastGame: LastGame = stateGame.getLastGame();
-      setRound(lastGame.round);
+      setRound(lastGame.round)
       setArray(cartons);
 
       if (lastGame.resultCartons.length > 0 && selecBoard != undefined) {
@@ -82,6 +82,7 @@ const InterfaceGame: React.FC = () => {
           });
         return;
       }
+
       const tempPatterns: Matrix<boolean>[] = [];
       cartons.forEach(() => {
         tempPatterns.push(

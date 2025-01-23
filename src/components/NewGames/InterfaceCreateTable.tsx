@@ -52,17 +52,18 @@ const InterfaceCreateTable: React.FC = () => {
   let isFirstRender = useRef(true);
 
   useLayoutEffect(() => {
-    // Logica para mantener el estado de la sesion
-    stateGame.restoreGame();
     if (!getItem()) return;
     let { stateArray, selectBoard } = getItem() as SesionCreateBoard;
     if (stateArray.length === 0) {
       deleteSesion();
       return;
     }
-    setArray(stateArray);
-    setStateIndexArr(selectBoard);
-    setMatrix(stateArray[selectBoard].matrix);
+    // Logica para mantener el estado de la sesion
+    stateGame.restoreGame().then(() => {
+      setArray(stateArray);
+      setStateIndexArr(selectBoard);
+      setMatrix(stateArray[selectBoard].matrix);
+    });
   }, []);
 
   useEffect(() => {
@@ -93,8 +94,8 @@ const InterfaceCreateTable: React.FC = () => {
     }
     const round: Round = stateGame.getRounds()[0];
     stateGame.notFinish();
-    stateGame.setLastGame({ round, resultCartons: [] });
-    setState(3);
+    stateGame.setLastGame({ round, resultCartons: [] }).then(() => setState(3));
+
   };
 
   const buttonDelete = () => {
