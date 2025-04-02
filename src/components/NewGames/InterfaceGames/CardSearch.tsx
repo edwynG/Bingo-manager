@@ -23,7 +23,7 @@ const CardSearch: React.FC<CardSearchProps> = ({
 
   const closeCard = (e: any) => {
     ref.current?.classList.replace("opacity-100", "opacity-0");
-    setTimeout(() => setShow(e), time);
+    setTimeout(() => setShow(e), 0);
   };
 
   return ReactDOM.createPortal(

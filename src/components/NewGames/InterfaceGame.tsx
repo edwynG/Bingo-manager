@@ -234,7 +234,9 @@ const InterfaceGame: React.FC = () => {
           sessionStorage.clear();
           navigate("/");
         }}
-        onClickCardFilter={() => {}}
+        onClickCardFilter={() => {
+
+        }}
         selectedCard={stateIndexArr}
         onClickCardBoard={onClickElementsBoard}
       />

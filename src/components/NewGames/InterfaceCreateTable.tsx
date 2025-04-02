@@ -73,6 +73,9 @@ const InterfaceCreateTable: React.FC = () => {
     }
     setItem({ stateArray: array, selectBoard: stateIndexArr });
     stateGame.setCartons(array);
+    if (array[stateIndexArr]) {
+      setMatrix(array[stateIndexArr].matrix)
+    }
 
     // Condición para restablecer el estado del indice actual, colocandolo en -1 si el arreglo esta vacio y el indice esta en cero
     // -1 significa que no hay ningun carton seleccionado
@@ -156,7 +159,6 @@ const InterfaceCreateTable: React.FC = () => {
       return;
     }
 
-    putElementArr(stateIndexArr, { ...carton, matrix: matrix });
     setMatrix(
       array.find((c: Carton, index: number) => {
         if (c.id === id) {
